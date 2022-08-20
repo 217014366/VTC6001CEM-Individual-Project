@@ -1,7 +1,7 @@
 import { OAuth2Client } from 'google-auth-library';
 import jwt from 'jsonwebtoken';
 
-const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+const client = new OAuth2Client('322581881760-c0jmv85qrg5b90pgv589kv6rdrnevd8n.apps.googleusercontent.com');
 
 const auth = async (req, res, next) => {
   try {
@@ -10,7 +10,7 @@ const auth = async (req, res, next) => {
     if (googleToken) {
       const ticket = await client.verifyIdToken({
         idToken: token,
-        audience: process.env.GOOGLE_CLIENT_ID,
+        audience: '322581881760-c0jmv85qrg5b90pgv589kv6rdrnevd8n.apps.googleusercontent.com',
       });
       const payload = ticket.getPayload();
       req.user = {
@@ -19,7 +19,7 @@ const auth = async (req, res, next) => {
         photoURL: payload.picture,
       };
     } else {
-      const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
+      const decodedToken = jwt.verify(token, 'test');
       const { id, name, photoURL } = decodedToken;
       req.user = { id, name, photoURL };
     }

@@ -23,7 +23,7 @@ export const register = tryCatch(async (req, res) => {
     password: hashedPassword,
   });
   const { _id: id, photoURL } = user;
-  const token = jwt.sign({ id, name, photoURL }, process.env.JWT_SECRET, {
+  const token = jwt.sign({ id, name, photoURL }, 'test', {
     expiresIn: '1h',
   });
   res.status(201).json({
@@ -48,7 +48,7 @@ export const login = tryCatch(async (req, res) => {
       .json({ success: false, message: 'Invalid credentials' });
 
   const { _id: id, name, photoURL } = existedUser;
-  const token = jwt.sign({ id, name, photoURL }, process.env.JWT_SECRET, {
+  const token = jwt.sign({ id, name, photoURL }, 'test', {
     expiresIn: '1h',
   });
   res.status(200).json({
@@ -65,7 +65,7 @@ export const updateProfile = tryCatch(async (req, res) => {
 
   // To Do: update all the rooms records added by this user
 
-  const token = jwt.sign({ id, name, photoURL }, process.env.JWT_SECRET, {
+  const token = jwt.sign({ id, name, photoURL }, 'test', {
     expiresIn: '1h',
   });
   res.status(200).json({ success: true, result: { name, photoURL, token } });

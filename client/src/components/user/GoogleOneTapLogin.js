@@ -22,7 +22,7 @@ const GoogleOneTapLogin = () => {
     setDisabled(true);
     try {
       window.google.accounts.id.initialize({
-        client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+        client_id: '322581881760-c0jmv85qrg5b90pgv589kv6rdrnevd8n.apps.googleusercontent.com',
         callback: handleResponse,
       });
       window.google.accounts.id.prompt((notification) => {

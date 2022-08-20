@@ -6,12 +6,12 @@ import userRouter from './routes/userRouter.js';
 
 dotenv.config();
 
-const port = process.env.PORT || 5000;
+const port = 5000;
 
 const app = express();
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', process.env.CLIENT_URL);
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
   res.setHeader(
     'Access-Control-Allow-Methods',
     'GET, POST, PUT, PATCH, DELETE'
@@ -33,7 +33,7 @@ app.use((req, res) =>
 
 const startServer = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_CONNECT);
+    await mongoose.connect('mongodb+srv://217014366:217014366abc@cluster0.lhnmw.mongodb.net/Livability?retryWrites=true&w=majority');
     app
       .listen(port, () => console.log(`Server is listening on port: ${port}`))
       .on('error', (e) => {
