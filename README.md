@@ -1,7 +1,7 @@
 VT6001CEM - Individual Project (217014366) - Hong Kong Livability Assessement Web App
 ===
 ## User Interface
-![Livability](https://i.ibb.co/dDv8ntq/screencapture-localhost-3000-2022-08-19-12-08-11.png width)  ![Livability](https://i.ibb.co/4F3g53q/screencapture-localhost-3000-2022-08-19-12-16-24.png) ![Livability](https://i.ibb.co/BzDjGts/screencapture-localhost-3000-2022-08-19-12-17-07.png)
+![Livability](https://i.ibb.co/dDv8ntq/screencapture-localhost-3000-2022-08-19-12-08-11.png) ![Livability](https://i.ibb.co/4F3g53q/screencapture-localhost-3000-2022-08-19-12-16-24.png) ![Livability](https://i.ibb.co/BzDjGts/screencapture-localhost-3000-2022-08-19-12-17-07.png)
 
 ## Introduction
 This is a code repository for the Individual Project of VT6001CEM.
